@@ -1,0 +1,12 @@
+config:
+  port: 8081
+  webhooks:
+    - name: webhook1
+      source: /webhook1
+      source_method: GET
+      destination: https://webhook.site/05bc5c16-8cd3-40ba-ab5e-8756107339ae
+      destination_method: GET
+    - name: webhook2
+      source: /webhook2
+      destination: https://webhook.site/05bc5c16-8cd3-40ba-ab5e-8756107339ae
+      source_method: POST
