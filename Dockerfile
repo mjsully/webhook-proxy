@@ -23,6 +23,8 @@ RUN CGO_ENABLED=0 GOOS=linux go build \
 # STAGE 2: Create the minimal runtime
 FROM scratch
 
+LABEL org.opencontainers.image.source=https://github.com/mjsully/webhook-proxy
+
 # Copy the SSL certificates from the builder stage
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
