@@ -1,6 +1,6 @@
 services:
   webhook-proxy:
-    image: github.com/mjsully/webhook-proxy
+    image: ghcr.io/mjsully/webhook-proxy-api
     container_name: webhook-proxy
     ports:
       - 8082:8080
