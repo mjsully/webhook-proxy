@@ -76,7 +76,7 @@ func main() {
 		}
 
 		r.Handle(sourceMethod, source, func(c *gin.Context) {
-			for index, element := range destinations {
+			for _, element := range destinations {
 				destination := element.(string)
 				forwardRequest(c, name, destination, destMethod)
 			}
