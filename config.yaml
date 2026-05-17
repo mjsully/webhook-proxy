@@ -4,9 +4,6 @@ config:
     - name: webhook1
       source: /webhook1
       source_method: GET
-      destination: https://webhook.site/2f22687c-f1b9-4a4d-8cb3-73e1578eceff
-      destination_method: GET
-    - name: webhook2
-      source: /webhook2
-      destination: https://webhook.site/05bc5c16-8cd3-40ba-ab5e-8756107339ae
-      source_method: POST
+      destinations: 
+        - https://webhook.site/d9e35843-d900-4626-b127-8590ebe6155e
+        - https://webhook.site/a66ebec7-3b61-4a1c-bc23-693c557c43d7

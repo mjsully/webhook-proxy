@@ -68,7 +68,7 @@ func main() {
 		name := wh["name"].(string)
 		source := wh["source"].(string)
 		sourceMethod := wh["source_method"].(string)
-		destination := wh["destination"].(string)
+		destinations := wh["destinations"].([]interface{})
 
 		destMethod := sourceMethod
 		if dm, ok := wh["destination_method"].(string); ok && dm != "" {
@@ -76,7 +76,10 @@ func main() {
 		}
 
 		r.Handle(sourceMethod, source, func(c *gin.Context) {
-			forwardRequest(c, name, destination, destMethod)
+			for index, element := range destinations {
+				destination := element.(string)
+				forwardRequest(c, name, destination, destMethod)
+			}
 		})
 	}
 
